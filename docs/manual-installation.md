@@ -114,7 +114,7 @@ ls -la config/wazuh_indexer_ssl_certs/
 
 Expected files:
 - `root-ca.pem`
-- `root-ca-key.pem`
+- `root-ca.key`
 - `wazuh.manager.pem`
 - `wazuh.manager-key.pem`
 - `wazuh.indexer.pem`
@@ -198,7 +198,7 @@ Sign agent certificate with root CA:
 ```bash
 openssl x509 -req -in agent.csr \
     -CA /opt/wazuh/wazuh-docker/single-node/config/wazuh_indexer_ssl_certs/root-ca.pem \
-    -CAkey /opt/wazuh/wazuh-docker/single-node/config/wazuh_indexer_ssl_certs/root-ca-key.pem \
+    -CAkey /opt/wazuh/wazuh-docker/single-node/config/wazuh_indexer_ssl_certs/root-ca.key \
     -CAcreateserial \
     -out agent.pem \
     -days 365 \

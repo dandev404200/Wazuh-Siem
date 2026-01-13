@@ -134,7 +134,7 @@ if [ ! -f "$AGENT_CERTS_DIR/agent.pem" ]; then
     # Sign agent certificate with root CA (valid for 365 days)
     openssl x509 -req -in agent.csr \
         -CA $CERTS_DIR/root-ca.pem \
-        -CAkey $CERTS_DIR/root-ca-key.pem \
+        -CAkey $CERTS_DIR/root-ca.key \
         -CAcreateserial \
         -out agent.pem \
         -days 365 \
